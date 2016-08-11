@@ -125,7 +125,6 @@
   });
 
   function switchPage(page){
-    console.log(page);
     pages[page].show(true);
     xtag.query(document, 'x-action[data-page]').forEach(function(action){
       if (action.getAttribute('data-page') == page) action.setAttribute('selected', '');
@@ -133,28 +132,9 @@
     });
   }
 
-  xtag.history.addPaths({
-    '/overview': {
-      action: function(){
-        switchPage('overview');
-      }
-    },
-    '/system': {
-      action: function(){
-        switchPage('system');
-      }
-    },
-    '/code': {
-      action: function(){
-        switchPage('code');
-      }
-    },
-    '/community':  {
-      action: function(){
-        switchPage('community');
-      }
-    }
-  });
+  function fireHashchange(){
+    xtag.fireEvent(window, 'hashchange');
+  }
 
   xtag.addEvents(document, {
     pagechange: function(event){
@@ -228,7 +208,37 @@
           containersMarkdown.setAttribute('loaded', '');
         });
       break;
+      default: pages.system.removeAttribute('content');
     }
   }, false);
+
+  xtag.history.addPaths({
+    '/overview': {
+      action: function(){
+        switchPage('overview');
+        fireHashchange();
+      }
+    },
+    '/system': {
+      action: function(){
+        switchPage('system');
+        fireHashchange();
+      }
+    },
+    '/code': {
+      action: function(){
+        switchPage('code');
+        fireHashchange();
+      }
+    },
+    '/community':  {
+      action: function(){
+        switchPage('community');
+        fireHashchange();
+      }
+    }
+  });
+
+  if (location.hash) fireHashchange();
 
 })();

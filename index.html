@@ -83,13 +83,37 @@
   </header>
 
   <section>
+    <div>
+      <h1 block="shadow">
+        We're building an
+        <span>Open Source</span>
+        <b>Identity Ecosystem</b>
+        for people, organizations, apps, and devices
+      </h1>
 
-    <h1>
-      Join us in building an
-      <span>Open Source</span>, <span>Self-Sovereign</span>, <span>Decentralized</span>,
-      <b>Identity Ecosystem</b>
-      for people, apps, services, and devices.
-    </h1>
+      <hr />
+
+      <h3 block="heading">The identity system we deserve</h3>
+
+      <ul id="overview_descriptors">
+        <li>SELF-SOVEREIGN <span>IDENTITIES</span></li>
+        <li>composed of</li>
+        <li>SEMANTIC <span>DATA</span></li>
+        <li>linked to</li>
+        <li>BLOCKCHAIN-ANCHORED <span>IDs</span></li>
+        <li>discoverable via</li>
+        <li>GLOBAL <span>INDEX</span></li>
+      </ul>
+
+      <h3 block="heading">Join us in building the future</h3>
+
+      <div class="logo-grid">
+        <img src="/images/logos/microsoft.png" />
+        <img src="/images/logos/blockstack.png" />
+        <img src="/images/logos/consensys.png" />
+      </div>
+
+    </div>
 
   </section>
 
@@ -110,9 +134,9 @@
     </menu>
 
     <div id="system_content">
-      <x-markdown id="system_names_markdown"></x-markdown>
-      <x-markdown id="system_users_markdown"></x-markdown>
-      <x-markdown id="system_containers_markdown"></x-markdown>
+      <x-markdown id="system_names_markdown" block="shadow"></x-markdown>
+      <x-markdown id="system_users_markdown" block="shadow"></x-markdown>
+      <x-markdown id="system_containers_markdown" block="shadow"></x-markdown>
     </div>
 
   </section>
@@ -185,10 +209,10 @@
     <x-cube diagram-group="users" width="3em" height="0.2em" depth="0.2em" translate="0,0,2.4em"></x-cube>
 
     <x-cube id="diagram_container" diagram-group="containers" width="4em" height="4em" depth="4em" translate="0,0,0.5em">
-      <x-cube id="diagram_container_acl" diagram-group="containers" width="0.25em" height="3.5em" depth="3.25em" translate="0.375em,0,0.375em">
-      <x-cube id="diagram_container_storage" diagram-group="containers" width="1.75em" height="2em" depth="1.75em" translate="1.5em,0,0em"></x-cube>
-      <x-cube id="diagram_container_bot" diagram-group="containers" width="0.75em" height="0.75em" depth="0.75em" translate="2.5em,0,2.5em"></x-cube>
-      <x-cube id="diagram_container_bot" diagram-group="containers" width="0.75em" height="0.75em" depth="0.75em" translate="1.5em,0,2.5em"></x-cube>
+      <x-cube id="diagram_container_acl" width="0.25em" height="3.5em" depth="3.25em" translate="0.375em,0,0.375em">
+      <x-cube id="diagram_container_storage" width="1.75em" height="2em" depth="1.75em" translate="1.5em,0,0em"></x-cube>
+      <x-cube id="diagram_container_bot" width="0.75em" height="0.75em" depth="0.75em" translate="2.5em,0,2.5em"></x-cube>
+      <x-cube id="diagram_container_bot" width="0.75em" height="0.75em" depth="0.75em" translate="1.5em,0,2.5em"></x-cube>
     </x-cube>
   </div>
 </div>
@@ -209,7 +233,7 @@
     </x-action>
     <x-action event="pagechange" data-page="code">
       <svg><use xlink:href="#brackets"></use></svg>
-      <span>Code</span>
+      <span>Specs &amp; Code</span>
     </x-action>
     <x-action event="pagechange" data-page="community">
       <svg><use xlink:href="#people"></use></svg>
